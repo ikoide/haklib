@@ -1,0 +1,103 @@
+// Fonts
+
+@font-face {
+  font-family: "Inter";
+  src: url('../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+// General
+
+html, body {
+  font-family: "Inter";
+
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.text-muted {
+  color: #8a8a8a;
+}
+
+.display-1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+// Grid System
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content:'';
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.row {
+  @include clearfix;
+}
+
+.col {
+  float: left;
+  display: inline;
+}
+
+.col-1 { width: percentage(1/12); }
+.col-2 { width: percentage(2/12); }
+.col-3 { width: percentage(3/12); }
+.col-4 { width: percentage(4/12); }
+.col-5 { width: percentage(5/12); }
+.col-6 { width: percentage(6/12); }
+.col-7 { width: percentage(7/12); }
+.col-8 { width: percentage(8/12); }
+.col-9 { width: percentage(9/12); }
+.col-10 { width: percentage(10/12); }
+.col-11 { width: percentage(11/12); }
+.col-12 { width: percentage(12/12); }
+.col-11-24 { width: percentage(11/24); }
+.col-13-24 { width: percentage(13/24); }
+// Buttons
+
+.btn {
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.3rem;
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+}
+
+.btn:active {
+  border-bottom: 1px solid rgba(0,0,0,0.45);
+  transform: translateY(1px);
+}
+
+.btn-red { background-color: #EA2C25; color: #fff; }
+.btn-yellow { background-color: #FBDE04; color: #000; }
+.btn-green { background-color: #2CCA10; color: #fff; }
+.btn-blue { background-color: #2782C7; color: #fff; }
+.btn-purple { background-color: #8518A0; color: #fff; }
+.btn-light { background-color: #F5F5F5; color: #000; }
+.btn-dark { background-color: #212121; color: #fff; }
+
+// Containers
+
+.container {
+  padding: 0.5rem 1rem;
+  margin: 0.5 1rem;
+}
+
+.container-fluid {
+  padding: 1rem 0rem;
+  margin: 0.5rem 0rem;
+}

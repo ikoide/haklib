@@ -1,0 +1,59 @@
+{% extends "layouts/layout.html" %}
+{% block content %}
+
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+
+  {{ form.username.label }}
+  {% if form.username.errors %}
+    {{ form.username(class="invalid") }}
+    {% for error in form.username.errors %}
+      {{ error }}
+    {% endfor %}
+  {% else %}
+    {{ form.username(class="") }}
+  {% endif %}
+
+  {{ form.email.label }}
+  {% if form.email.errors %}
+    {{ form.email(class="invalid") }}
+    {% for error in form.email.errors %}
+      {{ error }}
+    {% endfor %}
+  {% else %}
+    {{ form.email(class="") }}
+  {% endif %}
+
+  {{ form.password.label }}
+  {% if form.password.errors %}
+    {{ form.password(class="invalid") }}
+    {% for error in form.password.errors %}
+      {{ error }}
+    {% endfor %}
+  {% else %}
+    {{ form.password(class="") }}
+  {% endif %}
+
+  {{ form.confirm_password.label }}
+  {% if form.confirm_password.errors %}
+    {{ form.confirm_password(class="invalid") }}
+    {% for error in form.confirm_password.errors %}
+      {{ error }}
+    {% endfor %}
+  {% else %}
+    {{ form.confirm_password(class="") }}
+  {% endif %}
+
+  {{ form.register.label }}
+  {% if form.register.errors %}
+    {{ form.register(class="invalid") }}
+    {% for error in form.register.errors %}
+      {{ error }}
+    {% endfor %}
+  {% else %}
+    {{ form.register(class="") }}
+  {% endif %}
+
+</form>
+
+{% endblock content %}

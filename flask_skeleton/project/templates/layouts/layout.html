@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Project Description">
+    <meta name="keywords" content="Project Keywords (Separated by commas)">
+    <meta name="author" content="Project Authors">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" text="text/css" href="{{ url_for('static', filename='styles/hakss.css') }}" />
+    <link rel="stylesheet" text="text/css" href="{{ url_for('static', filename='styles/main.css') }}" />
+
+    <title>Project - {{ title }}</title>
+  </head>
+  <body>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
