@@ -2,8 +2,16 @@
 
 read -p "Project Name: " NAME
 read -p "Project Base Directory: " BASE_DIR
-PROJECT_DIR=$PWD"/../flask_boilerplate"
+TEMPLATE_DIR=$PWD"/../flask_boilerplate"
 
-cp -r $PROJECT_DIR $BASE_DIR"/"$NAME
+cp -r $TEMPLATE_DIR $BASE_DIR"/"$NAME
 # Rename all "project"'s with lowercase name
+
 # Create git repo and push to github
+
+cd $BASE_DIR
+git init
+hub create $NAME
+git add .
+git commit -m "Initial commit."
+git push -u origin master
