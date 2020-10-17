@@ -1,0 +1,87 @@
+{% extends "layouts/layout.html" %}
+{% block content %}
+
+<div class="row">
+  <div class="col col-13-24">
+    <div class="container container-auth">
+      <h3 class="text-muted">PROJECT</h3>
+      <h1 class="auth-title">REGISTER</h1>
+      <div class="container-fluid forum-auth">
+        <form method="POST" action="">
+          {{ form.hidden_tag() }}
+          <div class="row">
+            <div class="col col-6">
+              <div class="input-group">
+                <p class="input-label">{{ form.username.label }}</p>
+                {% if form.username.errors %}
+                  {{ form.username(class="input invalid") }}
+                  {% for error in form.username.errors %}
+                    <span class="form-error">{{ error }}</span>
+                  {% endfor %}
+                {% else %}
+                  {{ form.username(class="input") }}
+                {% endif %}
+              </div>
+              <div class="input-group">
+                <p class="input-label">{{ form.email.label }}</p>
+                {% if form.email.errors %}
+                  {{ form.email(class="input invalid") }}
+                  {% for error in form.email.errors %}
+                    <span class="form-error">{{ error }}</span>
+                  {% endfor %}
+                {% else %}
+                  {{ form.email(class="input") }}
+                {% endif %}
+              </div>
+            </div>
+            <div class="col col-6">
+              <div class="input-group">
+                <p class="input-label">{{ form.password.label }}</p>
+                {% if form.password.errors %}
+                  {{ form.password(class="input invalid") }}
+                  {% for error in form.password.errors %}
+                    <span class="form-error">{{ error }}</span>
+                  {% endfor %}
+                {% else %}
+                  {{ form.password(class="input") }}
+                {% endif %}
+              </div>
+              <div class="input-group">
+                <p class="input-label">{{ form.confirm_password.label }}</p>
+                {% if form.confirm_password.errors %}
+                  {{ form.confirm_password(class="input invalid") }}
+                  {% for error in form.confirm_password.errors %}
+                    <span class="form-error">{{ error }}</span>
+                  {% endfor %}
+                {% else %}
+                  {{ form.confirm_password(class="input") }}
+                {% endif %}
+              </div>  
+            </div>
+          </div>
+          <div class="input-group">
+            {% if form.register.errors %}
+              {{ form.register(class="submit-button invalid") }}
+              {% for error in form.register.errors %}
+                <span class="form-error">{{ error }}</span>
+              {% endfor %}
+            {% else %}
+              {{ form.register(class="submit-button") }}
+            {% endif %}
+          </div>    
+        </form>  
+      </div>
+    </div>
+  </div>
+  <div class="col col-11-24">
+    <div class="auth-right">
+      <div class="auth-right-inner">
+        <h1 class="display-1">Project</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic debitis quo numquam nesciunt repellat aliquid fugiat.</p>
+        <a href="{{ url_for('auth.login') }}"><button class="register-button">Login</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
